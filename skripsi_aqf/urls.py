@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.shortcuts import redirect
 from dashboard import views as dashboard_viewes
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', dashboard_viewes.co_dashboard, name='co'),
+    path('', lambda request: redirect('/co', permanent=True)),
+    path('co', dashboard_viewes.co_dashboard, name='co'),
     path('no2/', dashboard_viewes.no2_dashboard, name='no2'),
     path('o3/', dashboard_viewes.o3_dashboard, name='o3'),
     path('pm10/', dashboard_viewes.pm10_dashboard, name='pm10'),
