@@ -12,6 +12,7 @@
             integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href={% static 'css/styles.css' %}>
     </head>
 
     <body class="padding-top-10 bg">
@@ -96,13 +97,34 @@
 
             <!-- 2nd row graphs -->
             <div class="d-flex justify-content-between graphs border p-2">
-                <div
-                    class="me-1 border"
-                    style="height: 455px; width: 25%"
-                ></div>
+                <div class="me-1 card" style="height: 455px; width: 30%">
+                    <h3>ISPU</h3>
+                    <p class="grey-text">
+                        Indeks Standar Pencemar Udara berdasarkan polutan PM2.5
+                    </p>
+                    <div class="container ispu-card">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="row emoji">
+                                    <p>{{ ispu.emoji }}</p>
+                                </div>
+                                <div class="row ispu">
+                                    <p>{{ ispu.value }}</p>
+                                </div>
+                            </div>
+                            <div class="col-7 ispu-right">
+                                <div class="row date">{{ date }}</div>
+                                <div class="row category {{ ispu.class }}">
+                                    {{ ispu.category }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ispu-deskripsi">{{ ispu.description }}</div>
+                </div>
                 <div
                     class="ms-1 border"
-                    style="height: 455px; width: 75%"
+                    style="height: 455px; width: 70%"
                 ></div>
             </div>
 
@@ -110,11 +132,11 @@
             <div class="d-flex justify-content-between graphs border p-2">
                 <div
                     class="me-1 border"
-                    style="height: 685px; width: 25%"
+                    style="height: 685px; width: 30%"
                 ></div>
                 <div
                     class="ms-1 border"
-                    style="height: 455px; width: 75%"
+                    style="height: 455px; width: 70%"
                 ></div>
             </div>
         </div>
@@ -137,76 +159,3 @@
         ></script>
     </body>
 </html>
-
-<!-- Styler -->
-<style>
-    .bg {
-        background: #00d1ff;
-        padding-top: 60px;
-        /* padding-right: 60px;
-        padding-left: 60px; */
-    }
-    .glass-bg {
-        background: radial-gradient(
-                102.08% 102.08% at 75.12% 89.98%,
-                rgba(255, 255, 255, 0.4) 0%,
-                rgba(255, 255, 255, 0.1) 100%
-            )
-            /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-        border: 1px solid rgba(255, 255, 255, 0.58);
-        border-radius: 24px;
-        /* padding-top: 40px;
-    padding-bottom: 10px; */
-        margin-bottom: 100px;
-    }
-    .judul {
-        /* font-family: 'Inter'; */
-        font-style: normal;
-        font-weight: 700;
-        font-size: 50px;
-        color: #ffffff;
-        /* line-height: 116px; */
-    }
-    .polutant_button {
-        /* background-color: black; */
-        color: white;
-        font-size: 22px;
-        font-weight: 600;
-        border-bottom: 10px;
-        text-align: center;
-        width: 120px;
-        text-align: center;
-        font-weight: 700;
-    }
-    .polutant_button:hover {
-        /* background-color: yellow; */
-        color: #0061d2;
-    }
-    .polutant_button:hover > .button_line {
-        background-color: #0061d2;
-    }
-    .active {
-        color: #0061d2;
-    }
-    .active > .button_line {
-        background-color: #0061d2;
-    }
-    .button_line {
-        background-color: white;
-        border-radius: 10px;
-        height: 8px;
-    }
-    a {
-        all: unset;
-        cursor: pointer;
-    }
-    .marka_jalan {
-        background-color: white;
-        width: 100px;
-        height: 10px;
-    }
-
-    .rbtn {
-        all: unset;
-    }
-</style>
