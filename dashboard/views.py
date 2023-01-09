@@ -16,6 +16,7 @@ def co_dashboard(request):
             ispu_data['category'] = i['category']
             ispu_data['class'] = transform_to_class_name(i['category'])
             ispu_data['description'] = i['description']
+            break
 
     date = datetime.now()
     formatted_date = f'{day_of_week[date.weekday()]}, {date.day} {month[date.month-1]}'
