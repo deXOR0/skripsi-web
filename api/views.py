@@ -41,8 +41,8 @@ def update_ispu(request):
                 timestamps = Timestamp.objects.filter(timestamp__range=[now - timedelta(hours=24), now.replace(minute=0, second=0, microsecond=0)])
                 pm25 = []
                 for timestamp in timestamps:
-                    data = Pollutant.objects.filter(timestamp=timestamp).select_related().values_list('PM25')
-                    pm25.append(data.aggregate(Avg('PM25'))['PM25__avg'])
+                    data = Pollutant.objects.filter(timestamp=timestamp).select_related().values_list('pm25')
+                    pm25.append(data.aggregate(Avg('pm25'))['pm25__avg'])
                 
                 new_ispu_value = calculate_ispu(pm25)
 
