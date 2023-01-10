@@ -11,6 +11,9 @@ class Timestamp(models.Model):
 
     def __repr__(self):
         return str({'time_id': self.time_id, 'timestamp': self.timestamp})
+        
+    def __str__(self):
+        return str({'time_id': self.time_id, 'timestamp': self.timestamp})
 
 
 class City(models.Model):
