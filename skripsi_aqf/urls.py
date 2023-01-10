@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.shortcuts import redirect
 from dashboard import views as dashboard_views
+from api import views as api_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +28,5 @@ urlpatterns = [
     path('pm10/', dashboard_views.pm10_dashboard, name='pm10'),
     path('pm25/', dashboard_views.pm25_dashboard, name='pm25'),
     path('so2/', dashboard_views.so2_dashboard, name='so2'),
+    path('api/update-ispu', api_views.update_ispu, name='update_ispu'),
 ]

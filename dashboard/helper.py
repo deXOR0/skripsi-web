@@ -62,3 +62,6 @@ month = [
     'November',
     'Desember',
 ]
+
+def transform_to_class_name(category_name: str) -> str:
+    return category_name.replace(' ', '-').lower()

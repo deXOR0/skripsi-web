@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from datetime import datetime
-from dashboard.helper import ISPU, day_of_week, month
-
-def transform_to_class_name(category_name: str) -> str:
-    return category_name.replace(' ', '-').lower()
+from .helper import ISPU, day_of_week, month, transform_to_class_name
+from api.models import ISPU as ISPU_model
 
 # Create your views here.
 def co_dashboard(request):
-    ispu = 120
+    ispu = ISPU_model.objects.all()[0].value
     ispu_data = {}
     for i in ISPU:
         if ispu >= i['min'] and ispu <= i['max']:
