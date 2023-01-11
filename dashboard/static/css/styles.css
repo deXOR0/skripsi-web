@@ -75,6 +75,13 @@ a {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* .card-min-padding {
+    border-radius: 24px;
+    border: none;
+    padding: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+} */
+
 .card > h3 {
     color: #008f87;
     font-weight: 700;
