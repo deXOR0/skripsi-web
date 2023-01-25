@@ -21,12 +21,7 @@ from api import views as api_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', lambda request: redirect('/co', permanent=True)),
-    path('co', dashboard_views.co_dashboard, name='co'),
-    path('no2/', dashboard_views.no2_dashboard, name='no2'),
-    path('o3/', dashboard_views.o3_dashboard, name='o3'),
-    path('pm10/', dashboard_views.pm10_dashboard, name='pm10'),
-    path('pm25/', dashboard_views.pm25_dashboard, name='pm25'),
-    path('so2/', dashboard_views.so2_dashboard, name='so2'),
+    path('', dashboard_views.dashboard, name='dashboard'),
     path('api/update-ispu', api_views.update_ispu, name='update_ispu'),
+    path('api/update-prediction', api_views.update_prediction, name='update_prediction'),
 ]
