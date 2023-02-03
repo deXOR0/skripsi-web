@@ -55,7 +55,7 @@ def update_ispu(request):
 
             ISPU.objects.all().delete()
 
-            new_ispu = ISPU(value=new_ispu_value)
+            new_ispu = ISPU(value=new_ispu_value, timestamp=datetime.now(tzinfo=pytz.timezone('Asia/Jakarta')))
             new_ispu.save()
 
             ended = datetime.now()

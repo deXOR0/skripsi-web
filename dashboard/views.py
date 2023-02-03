@@ -2,6 +2,7 @@ from django.shortcuts import render
 from datetime import datetime
 from .helper import ISPU, day_of_week, month, transform_to_class_name
 from api.models import ISPU as ISPU_model
+import pytz
 
 # Create your views here.
 def dashboard(request):
@@ -16,7 +17,7 @@ def dashboard(request):
             ispu_data['description'] = i['description']
             break
 
-    date = datetime.now()
+    date = datetime.now(tzinfo=pytz.timezone('Asia/Jakarta'))
     formatted_date = f'{day_of_week[date.weekday()]}, {date.day} {month[date.month-1]}'
 
     return render(request, 'dashboard/dashboard.html', {'ispu': ispu_data, 'date': formatted_date})
