@@ -9,12 +9,12 @@ import pytz
 
 K = 10
 UTC = pytz.timezone("utc") 
+JAKARTA = pytz.timezone("Asia/Jakarta")
 
 def utc_to_local(utc_dt):
-    tz = pytz.timezone('Asia/Jakarta')
     utc_dt = utc_dt.replace(tzinfo=pytz.UTC)
     
-    return utc_dt.astimezone(tz)
+    return utc_dt.astimezone(JAKARTA)
 
 def calculate_ispu(pollutant: List[float]) -> int:
     avg_value = sum(pollutant) / len(pollutant)

@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from .models import ISPU, RecentPollutant
 from dashboard.models import Pollutant, Timestamp
 from datetime import datetime, timedelta
-from .helper import utc_to_local, calculate_ispu, predict
+from .helper import utc_to_local, calculate_ispu, predict, JAKARTA
 import os
 import json
 import pytz
@@ -55,7 +55,7 @@ def update_ispu(request):
 
             ISPU.objects.all().delete()
 
-            new_ispu = ISPU(value=new_ispu_value, timestamp=datetime.now(tzinfo=pytz.timezone('Asia/Jakarta')))
+            new_ispu = ISPU(value=new_ispu_value, timestamp=datetime.now().astimezone(JAKARTA))
             new_ispu.save()
 
             ended = datetime.now()
