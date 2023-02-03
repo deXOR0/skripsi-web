@@ -1,1 +1,1 @@
-web: gunicorn skripsi_aqf.wsgi --timeout 120
+web: gunicorn skripsi_aqf.wsgi --timeout 300
