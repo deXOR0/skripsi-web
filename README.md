@@ -119,7 +119,7 @@ gunicorn skripsi_aqf.wsgi --timeout 300
 
 ## Authors
 
-* **Atyanta Awesa Pambharu** - *Back-end Engineer, Machine Learning Engineer* - [Atyanta Awesa Pambharu](https://github.com/deXOR0/) - *Built the back end and the machine learning model*
+* **Atyanta Awesa Pambharu** - *Back-end Engineer, Machine Learning Engineer* - [Atyanta Awesa Pambharu](https://github.com/deXOR0/) - *Built the back end and the machine learning model, deploy and maintain production code, manage database and cron jobs*
 * **Adie Satriyo Nirbito** - *Front-end Engineer, Machine Learning Engineer* - [Adie Satriyo Nirbito](https://github.com/Asabito/) - *Built the front end and the machine learning model*
 * **Luthfie Hafizh Anugerah** - *Machine Learning Engineer* - [Luthfie Hafizh Anugerah](https://github.com/LuthfieHafizh) - *Built the machine learning model*
 
